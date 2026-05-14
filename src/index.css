@@ -1,11 +1,16 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
-  --color-marked: #dcfce7;
-  --color-marked-border: #22c55e;
-  --color-bingo: #fbbf24;
+  --color-bg: #05030d;
+  --color-surface: rgba(13, 11, 24, 0.92);
+  --color-surface-strong: #0d0920;
+  --color-text: #e5e7eb;
+  --color-accent: #7c3aed;
+  --color-accent-light: #22d3ee;
+  --color-accent-glow: #ec4899;
+  --color-marked: #0fe5e2;
+  --color-marked-border: #22d3ee;
+  --color-bingo: #facc15;
 }
 
 html,
@@ -16,6 +21,23 @@ body,
 
 body {
   margin: 0;
+  min-height: 100%;
   font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(2, 132, 199, 0.14), transparent 20%),
+    linear-gradient(180deg, #09040e 0%, #05030d 50%, #07030f 100%);
+  background-attachment: fixed;
   -webkit-tap-highlight-color: transparent;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.08), transparent 12%),
+    radial-gradient(circle at 90% 85%, rgba(34, 211, 238, 0.08), transparent 14%);
 }
